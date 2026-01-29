@@ -1,0 +1,1338 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Certificates - Mohammad Daffa My Honest Anugerah</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* ==================== CSS VARIABLES ==================== */
+      :root {
+        --navy-primary: #0a2463;
+        --navy-dark: #051533;
+        --navy-light: #1e3a8a;
+        --blue-accent: #3b82f6;
+        --white: #ffffff;
+        --off-white: #f8fafc;
+        --gray-50: #f9fafb;
+        --gray-100: #f3f4f6;
+        --gray-200: #e5e7eb;
+        --gray-300: #d1d5db;
+        --gray-600: #4b5563;
+        --gray-700: #374151;
+        --gray-900: #111827;
+
+        --font-body: "IBM Plex Sans", -apple-system, sans-serif;
+        --font-display: "DM Serif Display", Georgia, serif;
+
+        --shadow-sm: 0 1px 2px 0 rgba(10, 36, 99, 0.05);
+        --shadow-md: 0 4px 6px -1px rgba(10, 36, 99, 0.1);
+        --shadow-lg: 0 10px 15px -3px rgba(10, 36, 99, 0.1);
+        --shadow-xl: 0 20px 25px -5px rgba(10, 36, 99, 0.1);
+
+        --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      /* ==================== RESET & BASE ==================== */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: var(--font-body);
+        background: var(--white);
+        color: var(--gray-900);
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+
+      /* ==================== NAVIGATION ==================== */
+      .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--gray-200);
+        transition: var(--transition);
+      }
+
+      .navbar.scrolled {
+        box-shadow: var(--shadow-md);
+      }
+
+      .nav-container {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-family: var(--font-display);
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--navy-primary);
+        text-decoration: none;
+        letter-spacing: -0.02em;
+      }
+
+      .nav-menu {
+        display: flex;
+        gap: 2rem;
+        list-style: none;
+        align-items: center;
+      }
+
+      .nav-link {
+        color: var(--gray-700);
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 0.95rem;
+        transition: var(--transition);
+        position: relative;
+      }
+
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--navy-primary);
+        transition: var(--transition);
+      }
+
+      .nav-link:hover {
+        color: var(--navy-primary);
+      }
+
+      .nav-link:hover::after {
+        width: 100%;
+      }
+
+      .nav-link.active {
+        color: var(--navy-primary);
+      }
+
+      .mobile-toggle {
+        display: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0.5rem;
+      }
+
+      .mobile-toggle span {
+        display: block;
+        width: 25px;
+        height: 2px;
+        background: var(--navy-primary);
+        margin: 5px 0;
+        transition: var(--transition);
+      }
+
+      /* ==================== HERO SECTION ==================== */
+      .page-hero {
+        padding: 8rem 2rem 4rem;
+        background: linear-gradient(
+          135deg,
+          var(--off-white) 0%,
+          var(--white) 100%
+        );
+        position: relative;
+        overflow: hidden;
+      }
+
+      .page-hero::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        right: -20%;
+        width: 800px;
+        height: 800px;
+        background: radial-gradient(
+          circle,
+          rgba(10, 36, 99, 0.03) 0%,
+          transparent 70%
+        );
+        border-radius: 50%;
+      }
+
+      .hero-content {
+        max-width: 1280px;
+        margin: 0 auto;
+        text-align: center;
+        position: relative;
+        z-index: 1;
+      }
+
+      .breadcrumb {
+        display: inline-flex;
+        gap: 0.5rem;
+        align-items: center;
+        margin-bottom: 1rem;
+        padding: 0.5rem 1rem;
+        background: rgba(10, 36, 99, 0.08);
+        border-radius: 2rem;
+        font-size: 0.875rem;
+        color: var(--navy-primary);
+      }
+
+      .breadcrumb a {
+        color: var(--navy-primary);
+        text-decoration: none;
+        transition: var(--transition);
+      }
+
+      .breadcrumb a:hover {
+        color: var(--blue-accent);
+      }
+
+      .page-title {
+        font-family: var(--font-display);
+        font-size: 3.5rem;
+        color: var(--navy-dark);
+        margin-bottom: 1rem;
+        letter-spacing: -0.02em;
+      }
+
+      .page-description {
+        font-size: 1.25rem;
+        color: var(--gray-600);
+        max-width: 700px;
+        margin: 0 auto 2rem;
+        line-height: 1.8;
+      }
+
+      /* ==================== GALLERY SECTION ==================== */
+      .gallery-section {
+        padding: 4rem 2rem;
+        background: var(--white);
+      }
+
+      .container {
+        max-width: 1280px;
+        margin: 0 auto;
+      }
+
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+      }
+
+      .gallery-item {
+        position: relative;
+        border-radius: 1rem;
+        overflow: hidden;
+        cursor: pointer;
+        transition: var(--transition);
+        border: 1px solid var(--gray-200);
+        background: var(--white);
+      }
+
+      .gallery-item:hover {
+        transform: translateY(-8px);
+        box-shadow: var(--shadow-xl);
+        border-color: var(--navy-primary);
+      }
+
+      .gallery-item img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        display: block;
+        transition: var(--transition);
+      }
+
+      .gallery-item:hover img {
+        transform: scale(1.05);
+      }
+
+      .gallery-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          to top,
+          rgba(10, 36, 99, 0.9) 0%,
+          transparent 100%
+        );
+        display: flex;
+        align-items: flex-end;
+        padding: 1.5rem;
+        opacity: 0;
+        transition: var(--transition);
+      }
+
+      .gallery-item:hover .gallery-overlay {
+        opacity: 1;
+      }
+
+      .gallery-title {
+        color: var(--white);
+        font-weight: 600;
+        font-size: 1.125rem;
+      }
+
+      .icon-wrapper {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 60px;
+        height: 60px;
+        background: var(--white);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: var(--transition);
+        box-shadow: var(--shadow-lg);
+      }
+
+      .gallery-item:hover .icon-wrapper {
+        opacity: 1;
+      }
+
+      .icon-wrapper::before {
+        content: "🔍";
+        font-size: 1.5rem;
+      }
+
+      /* ==================== MODAL ==================== */
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 2000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.95);
+        animation: fadeIn 0.3s;
+      }
+
+      .modal.active {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .modal-content {
+        position: relative;
+        max-width: 90%;
+        max-height: 90vh;
+        background: var(--white);
+        border-radius: 1rem;
+        overflow: hidden;
+      }
+
+      .modal-image {
+        width: 100%;
+        max-height: 85vh;
+        object-fit: contain;
+        display: block;
+      }
+
+      .modal-close {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        width: 50px;
+        height: 50px;
+        background: var(--white);
+        border: none;
+        border-radius: 50%;
+        font-size: 2rem;
+        color: var(--navy-primary);
+        cursor: pointer;
+        transition: var(--transition);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: var(--shadow-lg);
+        z-index: 10;
+      }
+
+      .modal-close:hover {
+        background: var(--navy-primary);
+        color: var(--white);
+        transform: rotate(90deg);
+      }
+
+      .carousel-controls {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 1rem;
+        pointer-events: none;
+      }
+
+      .carousel-btn {
+        width: 50px;
+        height: 50px;
+        background: var(--white);
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: var(--transition);
+        pointer-events: all;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: var(--shadow-lg);
+      }
+
+      .carousel-btn:hover {
+        background: var(--navy-primary);
+        color: var(--white);
+        transform: scale(1.1);
+      }
+
+      .carousel-btn::before {
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+
+      .carousel-prev::before {
+        content: "‹";
+      }
+
+      .carousel-next::before {
+        content: "›";
+      }
+
+      /* ==================== FOOTER ==================== */
+      .footer {
+        background: var(--navy-dark);
+        color: var(--white);
+        padding: 3rem 2rem 2rem;
+        text-align: center;
+      }
+
+      .footer-content {
+        max-width: 1280px;
+        margin: 0 auto;
+      }
+
+      .footer p {
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      .footer-links {
+        display: flex;
+        gap: 2rem;
+        justify-content: center;
+        margin-top: 1rem;
+        flex-wrap: wrap;
+      }
+
+      .footer-links a {
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        transition: var(--transition);
+      }
+
+      .footer-links a:hover {
+        color: var(--white);
+      }
+
+      /* ==================== ANIMATIONS ==================== */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes slideUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .gallery-item {
+        animation: slideUp 0.5s ease-out;
+      }
+
+      .gallery-item:nth-child(1) {
+        animation-delay: 0.1s;
+      }
+      .gallery-item:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+      .gallery-item:nth-child(3) {
+        animation-delay: 0.3s;
+      }
+      .gallery-item:nth-child(4) {
+        animation-delay: 0.4s;
+      }
+      .gallery-item:nth-child(5) {
+        animation-delay: 0.5s;
+      }
+      .gallery-item:nth-child(6) {
+        animation-delay: 0.6s;
+      }
+
+      /* ==================== RESPONSIVE ==================== */
+      @media (max-width: 768px) {
+        .nav-menu {
+          position: fixed;
+          top: 70px;
+          left: -100%;
+          width: 100%;
+          flex-direction: column;
+          background: var(--white);
+          padding: 2rem;
+          box-shadow: var(--shadow-lg);
+          transition: var(--transition);
+          gap: 1rem;
+        }
+
+        .nav-menu.active {
+          left: 0;
+        }
+
+        .mobile-toggle {
+          display: block;
+        }
+
+        .page-hero {
+          padding: 6rem 1.5rem 3rem;
+        }
+
+        .page-title {
+          font-size: 2.5rem;
+        }
+
+        .gallery-grid {
+          grid-template-columns: 1fr;
+          gap: 1.5rem;
+        }
+
+        .modal-content {
+          max-width: 95%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ==================== NAVIGATION ==================== -->
+    <nav class="navbar" id="navbar">
+      <div class="nav-container">
+        <a href="portfolio.html" class="logo">Moh Daffa.</a>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="index.html#home" class="nav-link">Home</a></li>
+          <li><a href="index.html#about" class="nav-link">About</a></li>
+          <li><a href="index.html#skills" class="nav-link">Skills</a></li>
+          <li>
+            <a href="index.html" class="nav-link">Projects</a>
+          </li>
+          <li>
+            <a href="certifDA.html" class="nav-link active">Certifications</a>
+          </li>
+          <li>
+            <a href="index.html" class="nav-link">Experience</a>
+          </li>
+          <li><a href="index.html" class="nav-link">Contact</a></li>
+        </ul>
+        <button class="mobile-toggle" id="mobileToggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <section class="page-hero">
+      <div class="hero-content">
+        <div class="breadcrumb">
+          <a href="portfolio.html">Home</a>
+          <span>/</span>
+          <span>Certificates</span>
+        </div>
+        <h1 class="page-title">Professional Certificates</h1>
+        <p class="page-description">
+          A comprehensive collection of certifications showcasing my commitment
+          to continuous learning and professional development in Data Analysis,
+          Programming, and Technology.
+        </p>
+      </div>
+    </section>
+
+    <!-- ==================== GALLERY SECTION ==================== -->
+    <section class="gallery-section">
+      <div class="container">
+        <div class="gallery-grid">
+          <!-- Data Analyst 1 -->
+          <div class="gallery-item" onclick="openModal(0)">
+            <img
+              src="assets/certifications/cert1.jpg"
+              alt="Data Analyst Certificate 1"
+              onerror="
+                this.src =
+                  'https://via.placeholder.com/400x300/0A2463/ffffff?text=Data+Analyst+1'
+              "
+            />
+            <div class="gallery-overlay">
+              <div class="gallery-title">Intro to Data Analytics</div>
+            </div>
+            <div class="icon-wrapper"></div>
+          </div>
+
+          <!-- Data Analyst 2 -->
+          <div class="gallery-item" onclick="openModal(1)">
+            <img
+              src="assets/certifications/cert2.jpg"
+              alt="Data Analyst Certificate 2"
+              onerror="
+                this.src =
+                  'https://via.placeholder.com/400x300/0A2463/ffffff?text=Data+Analyst+2'
+              "
+            />
+            <div class="gallery-overlay">
+              <div class="gallery-title">
+                Python Introduction for Data Analysis
+              </div>
+            </div>
+            <div class="icon-wrapper"></div>
+          </div>
+
+          <!-- Data Visualization 1 -->
+          <div class="gallery-item" onclick="openModal(2)">
+            <img
+              src="assets/certifications/cert3.jpg"
+              alt="Data Visualization Certificate 1"
+              onerror="
+                this.src =
+                  'https://via.placeholder.com/400x300/0A2463/ffffff?text=Data+Visualization+1'
+              "
+            />
+            <div class="gallery-overlay">
+              <div class="gallery-title">
+                Data Visualization with Microsoft Excel
+              </div>
+            </div>
+            <div class="icon-wrapper"></div>
+          </div>
+
+          <!-- Data Visualization 2 -->
+          <div class="gallery-item" onclick="openModal(3)">
+            <img
+              src="assets/certifications/cert4.jpg"
+              alt="Data Visualization Certificate 2"
+              onerror="
+                this.src =
+                  'https://via.placeholder.com/400x300/0A2463/ffffff?text=Data+Visualization+2'
+              "
+            />
+            <div class="gallery-overlay">
+              <div class="gallery-title">Pivot Table in Microsoft Excel</div>
+            </div>
+            <div class="icon-wrapper"></div>
+          </div>
+
+          <!-- Pivot Table 1 -->
+          <div class="gallery-item" onclick="openModal(4)">
+            <img
+              src="assets/certifications/cert5.png"
+              alt="Pivot Table with Excel Certificate 1"
+              onerror="
+                this.src =
+                  'https://via.placeholder.com/400x300/0A2463/ffffff?text=Pivot+Table+1'
+              "
+            />
+            <div class="gallery-overlay">
+              <div class="gallery-title">Database Design</div>
+            </div>
+            <div class="icon-wrapper"></div>
+          </div>
+
+          <!-- Pivot Table 2 -->
+          <div class="gallery-item" onclick="openModal(5)">
+            <img
+              src="assets/certifications/cert6.png"
+              alt="Pivot Table with Excel Certificate 2"
+              onerror="
+                this.src =
+                  'https://via.placeholder.com/400x300/0A2463/ffffff?text=Pivot+Table+2'
+              "
+            />
+            <div class="gallery-overlay">
+              <div class="gallery-title">Database Programming with SQL</div>
+            </div>
+            <div class="icon-wrapper"></div>
+          </div>
+
+          <!-- Database 1 -->
+          <div class="gallery-item" onclick="openModal(6)">
+            <img
+              src="assets/certifications/cert7.jpg"
+              alt="Database Certificate 1"
+              onerror="
+                this.src =
+                  'https://via.placeholder.com/400x300/0A2463/ffffff?text=Database+1'
+              "
+            />
+            <div class="gallery-overlay">
+              <div class="gallery-title">Starting Programming with Python</div>
+            </div>
+            <div class="icon-wrapper"></div>
+          </div>
+
+          <!-- Database 2 -->
+          <div class="gallery-item" onclick="openModal(7)">
+            <img
+              src="assets/certifications/cert8.jpg"
+              alt="Database Certificate 2"
+              onerror="
+                this.src =
+                  'https://via.placeholder.com/400x300/0A2463/ffffff?text=Database+2'
+              "
+            />
+            <div class="gallery-overlay">
+              <div class="gallery-title">Starting Programming with Python</div>
+            </div>
+            <div class="icon-wrapper"></div>
+          </div>
+
+          <!-- Python 1 -->
+          <div class="gallery-item" onclick="openModal(8)">
+            <img
+              src="assets/certifications/cert9.jpg"
+              alt="Python Certificate 1"
+              onerror="
+                this.src =
+                  'https://via.placeholder.com/400x300/0A2463/ffffff?text=Python+1'
+              "
+            />
+            <div class="gallery-overlay">
+              <div class="gallery-title">Starting Programming with Python</div>
+            </div>
+            <div class="icon-wrapper"></div>
+          </div>
+
+          <!-- Python 2 -->
+          <div class="gallery-item" onclick="openModal(9)">
+            <img
+              src="assets/certifications/cert10.jfif"
+              alt="Python Certificate 2"
+              onerror="
+                this.src =
+                  'https://via.placeholder.com/400x300/0A2463/ffffff?text=Python+2'
+              "
+            />
+            <div class="gallery-overlay">
+              <div class="gallery-title">
+                Certificate of Appreciation United Tractors
+              </div>
+            </div>
+            <div class="icon-wrapper"></div>
+          </div>
+
+          <!-- Data Science 1 -->
+          <div class="gallery-item" onclick="openModal(10)">
+            <img
+              src="assets/certifications/cert11.jpg"
+              alt="Data Science Certificate 1"
+              onerror="
+                this.src =
+                  'https://via.placeholder.com/400x300/0A2463/ffffff?text=Data+Science+1'
+              "
+            />
+            <div class="gallery-overlay">
+              <div class="gallery-title">Website Development: Back End</div>
+            </div>
+            <div class="icon-wrapper"></div>
+          </div>
+
+          <!-- Data Science 2 -->
+          <div class="gallery-item" onclick="openModal(11)">
+            <img
+              src="assets/certifications/cert12.jpg"
+              alt="Data Science Certificate 2"
+              onerror="
+                this.src =
+                  'https://via.placeholder.com/400x300/0A2463/ffffff?text=Data+Science+2'
+              "
+            />
+            <div class="gallery-overlay">
+              <div class="gallery-title">Wordpress Introduction</div>
+            </div>
+            <div class="icon-wrapper"></div>
+          </div>
+
+          <!-- Gen AI 1 -->
+          <div class="gallery-item" onclick="openModal(12)">
+            <img
+              src="assets/certifications/cert13.jpg"
+              alt="Aplikasi Gen AI Certificate 1"
+              onerror="
+                this.src =
+                  'https://via.placeholder.com/400x300/0A2463/ffffff?text=Gen+AI+1'
+              "
+            />
+            <div class="gallery-overlay">
+              <div class="gallery-title">
+                Learn data science with Microsoft Fabric
+              </div>
+            </div>
+            <div class="icon-wrapper"></div>
+          </div>
+
+          <!-- Gen AI 2 -->
+          <div class="gallery-item" onclick="openModal(13)">
+            <img
+              src="assets/certifications/cert14.jpg"
+              alt="Aplikasi Gen AI Certificate 2"
+              onerror="
+                this.src =
+                  'https://via.placeholder.com/400x300/0A2463/ffffff?text=Gen+AI+2'
+              "
+            />
+            <div class="gallery-overlay">
+              <div class="gallery-title">
+                Learn data science with Microsoft Fabric
+              </div>
+            </div>
+            <div class="icon-wrapper"></div>
+          </div>
+
+          <!-- United Tractors -->
+          <div class="gallery-item" onclick="openModal(14)">
+            <img
+              src="assets/certifications/cert15.jpg"
+              alt="United Tractors Internship Certificate"
+              onerror="
+                this.src =
+                  'https://via.placeholder.com/400x300/0A2463/ffffff?text=United+Tractors'
+              "
+            />
+            <div class="gallery-overlay">
+              <div class="gallery-title">
+                Learn data science with Microsoft Fabric
+              </div>
+            </div>
+            <div class="icon-wrapper"></div>
+          </div>
+
+          <!-- Graphic Design 1 -->
+          <div class="gallery-item" onclick="openModal(15)">
+            <img
+              src="assets/certifications/cert16.jpg"
+              alt="Graphic Design Certificate 1"
+              onerror="
+                this.src =
+                  'https://via.placeholder.com/400x300/0A2463/ffffff?text=Graphic+Design+1'
+              "
+            />
+            <div class="gallery-overlay">
+              <div class="gallery-title">
+                Building AI applications with Microsoft Azure
+              </div>
+            </div>
+            <div class="icon-wrapper"></div>
+          </div>
+
+          <!-- Graphic Design 2 -->
+          <div class="gallery-item" onclick="openModal(16)">
+            <img
+              src="assets/certifications/cert17.jpg"
+              alt="Graphic Design Certificate 2"
+              onerror="
+                this.src =
+                  'https://via.placeholder.com/400x300/0A2463/ffffff?text=Graphic+Design+2'
+              "
+            />
+            <div class="gallery-overlay">
+              <div class="gallery-title">
+                Building AI applications with Microsoft Azure
+              </div>
+            </div>
+            <div class="icon-wrapper"></div>
+          </div>
+
+          <!-- Organisasi 1 -->
+          <div class="gallery-item" onclick="openModal(17)">
+            <img
+              src="assets/certifications/cert18.jpg"
+              alt="Organisasi Certificate 1"
+              onerror="
+                this.src =
+                  'https://via.placeholder.com/400x300/0A2463/ffffff?text=Organisasi+1'
+              "
+            />
+            <div class="gallery-overlay">
+              <div class="gallery-title">
+                Building AI applications with Microsoft Azure
+              </div>
+            </div>
+            <div class="icon-wrapper"></div>
+          </div>
+
+          <!-- Organisasi 2 -->
+          <div class="gallery-item" onclick="openModal(18)">
+            <img
+              src="assets/certifications/cert19.jpg"
+              alt="Organisasi Certificate 2"
+              onerror="
+                this.src =
+                  'https://via.placeholder.com/400x300/0A2463/ffffff?text=Organisasi+2'
+              "
+            />
+            <div class="gallery-overlay">
+              <div class="gallery-title">Intro to Software Engineering</div>
+            </div>
+            <div class="icon-wrapper"></div>
+          </div>
+
+          <!-- Mobile Dev 1 -->
+          <div class="gallery-item" onclick="openModal(19)">
+            <img
+              src="assets/certifications/cert20.jpg"
+              alt="Mobile Development Certificate 1"
+              onerror="
+                this.src =
+                  'https://via.placeholder.com/400x300/0A2463/ffffff?text=Mobile+Dev+1'
+              "
+            />
+            <div class="gallery-overlay">
+              <div class="gallery-title">Design Graphics</div>
+            </div>
+            <div class="icon-wrapper"></div>
+          </div>
+
+          <!-- Mobile Dev 2 -->
+          <div class="gallery-item" onclick="openModal(20)">
+            <img
+              src="assets/certifications/cert21.png"
+              alt="Mobile Development Certificate 2"
+              onerror="
+                this.src =
+                  'https://via.placeholder.com/400x300/0A2463/ffffff?text=Mobile+Dev+2'
+              "
+            />
+            <div class="gallery-overlay">
+              <div class="gallery-title">Java Fundamentals</div>
+            </div>
+            <div class="icon-wrapper"></div>
+          </div>
+
+          <!-- Website 1 -->
+          <div class="gallery-item" onclick="openModal(21)">
+            <img
+              src="assets/certifications/cert22.png"
+              alt="Website Development Certificate 1"
+              onerror="
+                this.src =
+                  'https://via.placeholder.com/400x300/0A2463/ffffff?text=Website+1'
+              "
+            />
+            <div class="gallery-overlay">
+              <div class="gallery-title">Mobile Development Participation</div>
+            </div>
+            <div class="icon-wrapper"></div>
+          </div>
+
+          <!-- Website 2 -->
+          <div class="gallery-item" onclick="openModal(22)">
+            <img
+              src="assets/certifications/cert23.png"
+              alt="Website Development Certificate 2"
+              onerror="
+                this.src =
+                  'https://via.placeholder.com/400x300/0A2463/ffffff?text=Website+2'
+              "
+            />
+            <div class="gallery-overlay">
+              <div class="gallery-title">
+                Certificate of Participation in Public Lecture
+              </div>
+            </div>
+            <div class="icon-wrapper"></div>
+          </div>
+
+          <!-- WordPress 1 -->
+          <div class="gallery-item" onclick="openModal(23)">
+            <img
+              src="assets/certifications/cert24.jpg"
+              alt="WordPress Certificate 1"
+              onerror="
+                this.src =
+                  'https://via.placeholder.com/400x300/0A2463/ffffff?text=WordPress+1'
+              "
+            />
+            <div class="gallery-overlay">
+              <div class="gallery-title">Revolutionary Leadership</div>
+            </div>
+            <div class="icon-wrapper"></div>
+          </div>
+
+          <!-- WordPress 2 -->
+          <div class="gallery-item" onclick="openModal(24)">
+            <img
+              src="assets/certifications/cert25.png"
+              alt="WordPress Certificate 2"
+              onerror="
+                this.src =
+                  'https://via.placeholder.com/400x300/0A2463/ffffff?text=WordPress+2'
+              "
+            />
+            <div class="gallery-overlay">
+              <div class="gallery-title">vice president of the association</div>
+            </div>
+            <div class="icon-wrapper"></div>
+          </div>
+
+          <!-- AI & SO 1 -->
+          <div class="gallery-item" onclick="openModal(25)">
+            <img
+              src="assets/certifications/cert26.png"
+              alt="AI & SO Certificate 1"
+              onerror="
+                this.src =
+                  'https://via.placeholder.com/400x300/0A2463/ffffff?text=AI+%26+SO+1'
+              "
+            />
+            <div class="gallery-overlay">
+              <div class="gallery-title">Executive Director of LKmu-TD</div>
+            </div>
+            <div class="icon-wrapper"></div>
+          </div>
+
+          <!-- AI & SO 2 -->
+          <div class="gallery-item" onclick="openModal(26)">
+            <img
+              src="assets/certifications/cert27.png"
+              alt="AI & SO Certificate 2"
+              onerror="
+                this.src =
+                  'https://via.placeholder.com/400x300/0A2463/ffffff?text=AI+%26+SO+2'
+              "
+            />
+            <div class="gallery-overlay">
+              <div class="gallery-title">AR/VR Event Committee</div>
+            </div>
+            <div class="icon-wrapper"></div>
+          </div>
+
+          <!-- AI & SO 2 -->
+          <div class="gallery-item" onclick="openModal(26)">
+            <img
+              src="assets/certifications/cert28.png"
+              alt="AI & SO Certificate 2"
+              onerror="
+                this.src =
+                  'https://via.placeholder.com/400x300/0A2463/ffffff?text=AI+%26+SO+2'
+              "
+            />
+            <div class="gallery-overlay">
+              <div class="gallery-title">
+                Participants in The Artificial Intelligence & Search Engine
+                Optimization Webinar
+              </div>
+            </div>
+            <div class="icon-wrapper"></div>
+          </div>
+
+          <!-- AI & SO 2 -->
+          <div class="gallery-item" onclick="openModal(26)">
+            <img
+              src="assets/certifications/cert29.png"
+              alt="AI & SO Certificate 2"
+              onerror="
+                this.src =
+                  'https://via.placeholder.com/400x300/0A2463/ffffff?text=AI+%26+SO+2'
+              "
+            />
+            <div class="gallery-overlay">
+              <div class="gallery-title">Participants in The LKmu-TD</div>
+            </div>
+            <div class="icon-wrapper"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== MODAL ==================== -->
+    <div id="certificateModal" class="modal">
+      <div class="modal-content">
+        <button class="modal-close" onclick="closeModal()">&times;</button>
+        <img id="modalImage" src="" alt="Certificate" class="modal-image" />
+        <div class="carousel-controls">
+          <button
+            class="carousel-btn carousel-prev"
+            onclick="navigateImage(-1)"
+          ></button>
+          <button
+            class="carousel-btn carousel-next"
+            onclick="navigateImage(1)"
+          ></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+      <div class="footer-content">
+        <p>
+          &copy; 2025 Mohammad Daffa My Honest Anugerah. All rights reserved.
+        </p>
+        <div class="footer-links">
+          <a href="portfolio.html#home">Home</a>
+          <a href="portfolio.html#about">About</a>
+          <a href="portfolio.html#skills">Skills</a>
+          <a href="portfolio.html#projects">Projects</a>
+          <a href="portfolio.html#contact">Contact</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ==================== JAVASCRIPT ==================== -->
+    <script>
+      // Certificate images array
+      const certificates = [
+        {
+          src: "assets/certifications/cert1.jpg",
+          alt: "Data Analyst Certificate 1",
+        },
+        {
+          src: "assets/certifications/cert2.jpg",
+          alt: "Data Analyst Certificate 2",
+        },
+        {
+          src: "assets/certifications/cert3.jpg",
+          alt: "Data Visualization Certificate 1",
+        },
+        {
+          src: "assets/certifications/cert4.jpg",
+          alt: "Data Visualization Certificate 2",
+        },
+        {
+          src: "assets/certifications/cert5.png",
+          alt: "Pivot Table with Excel Certificate 1",
+        },
+        {
+          src: "assets/certifications/cert6.png",
+          alt: "Pivot Table with Excel Certificate 2",
+        },
+        {
+          src: "assets/certifications/cert7.jpg",
+          alt: "Database Certificate 1",
+        },
+        {
+          src: "assets/certifications/cert8.jpg",
+          alt: "Database Certificate 2",
+        },
+        { src: "assets/certifications/cert9.jpg", alt: "Python Certificate 1" },
+        {
+          src: "assets/certifications/cert10.jfif",
+          alt: "Python Certificate 2",
+        },
+        {
+          src: "assets/certifications/cert11.jpg",
+          alt: "Data Science Certificate 1",
+        },
+        {
+          src: "assets/certifications/cert12.jpg",
+          alt: "Data Science Certificate 2",
+        },
+        {
+          src: "assets/certifications/cert13.jpg",
+          alt: "Aplikasi Gen AI Certificate 1",
+        },
+        {
+          src: "assets/certifications/cert14.jpg",
+          alt: "Aplikasi Gen AI Certificate 2",
+        },
+        {
+          src: "assets/certifications/cert15.jpg",
+          alt: "United Tractors Internship",
+        },
+        {
+          src: "assets/certifications/cert16.jpg",
+          alt: "Graphic Design Certificate 1",
+        },
+        {
+          src: "assets/certifications/cert17.jpg",
+          alt: "Graphic Design Certificate 2",
+        },
+        {
+          src: "assets/certifications/cert18.jpg",
+          alt: "Organisasi Certificate 1",
+        },
+        {
+          src: "assets/certifications/cert19.jpg",
+          alt: "Organisasi Certificate 2",
+        },
+        {
+          src: "assets/certifications/cert20.jpg",
+          alt: "Mobile Development Certificate 1",
+        },
+        {
+          src: "assets/certifications/cert21.png",
+          alt: "Mobile Development Certificate 2",
+        },
+        {
+          src: "assets/certifications/cert22.png",
+          alt: "Website Development Certificate 1",
+        },
+        {
+          src: "assets/certifications/cert23.jpg",
+          alt: "Website Development Certificate 2",
+        },
+        {
+          src: "assets/certifications/cert24.jpg",
+          alt: "WordPress Certificate 1",
+        },
+        {
+          src: "assets/certifications/cert25.png",
+          alt: "WordPress Certificate 2",
+        },
+        {
+          src: "assets/certifications/cert26.png",
+          alt: "AI & SO Certificate 1",
+        },
+        {
+          src: "assets/certifications/cert27.png",
+          alt: "AI & SO Certificate 2",
+        },
+        {
+          src: "assets/certifications/cert28.png",
+          alt: "AI & SO Certificate 2",
+        },
+        {
+          src: "assets/certifications/cert29.png",
+          alt: "AI & SO Certificate 2",
+        },
+      ];
+
+      let currentImageIndex = 0;
+
+      // Navbar scroll effect
+      const navbar = document.getElementById("navbar");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 50) {
+          navbar.classList.add("scrolled");
+        } else {
+          navbar.classList.remove("scrolled");
+        }
+      });
+
+      // Mobile menu toggle
+      const mobileToggle = document.getElementById("mobileToggle");
+      const navMenu = document.getElementById("navMenu");
+
+      mobileToggle.addEventListener("click", () => {
+        navMenu.classList.toggle("active");
+      });
+
+      // Close mobile menu when clicking a link
+      document.querySelectorAll(".nav-link").forEach((link) => {
+        link.addEventListener("click", () => {
+          navMenu.classList.remove("active");
+        });
+      });
+
+      // Modal functions
+      function openModal(index) {
+        currentImageIndex = index;
+        const modal = document.getElementById("certificateModal");
+        const modalImage = document.getElementById("modalImage");
+
+        modalImage.src = certificates[index].src;
+        modalImage.alt = certificates[index].alt;
+
+        // Fallback if image fails to load
+        modalImage.onerror = function () {
+          this.src = `https://via.placeholder.com/800x600/0A2463/ffffff?text=${encodeURIComponent(certificates[index].alt)}`;
+        };
+
+        modal.classList.add("active");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeModal() {
+        const modal = document.getElementById("certificateModal");
+        modal.classList.remove("active");
+        document.body.style.overflow = "auto";
+      }
+
+      function navigateImage(direction) {
+        currentImageIndex += direction;
+
+        // Loop around
+        if (currentImageIndex < 0) {
+          currentImageIndex = certificates.length - 1;
+        } else if (currentImageIndex >= certificates.length) {
+          currentImageIndex = 0;
+        }
+
+        const modalImage = document.getElementById("modalImage");
+        modalImage.src = certificates[currentImageIndex].src;
+        modalImage.alt = certificates[currentImageIndex].alt;
+
+        // Fallback if image fails to load
+        modalImage.onerror = function () {
+          this.src = `https://via.placeholder.com/800x600/0A2463/ffffff?text=${encodeURIComponent(certificates[currentImageIndex].alt)}`;
+        };
+      }
+
+      // Close modal when clicking outside
+      document
+        .getElementById("certificateModal")
+        .addEventListener("click", (e) => {
+          if (e.target.id === "certificateModal") {
+            closeModal();
+          }
+        });
+
+      // Close modal with ESC key
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+          closeModal();
+        } else if (e.key === "ArrowLeft") {
+          navigateImage(-1);
+        } else if (e.key === "ArrowRight") {
+          navigateImage(1);
+        }
+      });
+    </script>
+  </body>
+</html>

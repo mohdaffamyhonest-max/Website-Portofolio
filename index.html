@@ -1,0 +1,2191 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mohammad Daffa My Honest Anugerah - Data Analyst Portfolio</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* ==================== CSS VARIABLES ==================== */
+      :root {
+        --navy-primary: #0a2463;
+        --navy-dark: #051533;
+        --navy-light: #1e3a8a;
+        --blue-accent: #3b82f6;
+        --white: #ffffff;
+        --off-white: #f8fafc;
+        --gray-50: #f9fafb;
+        --gray-100: #f3f4f6;
+        --gray-200: #e5e7eb;
+        --gray-300: #d1d5db;
+        --gray-600: #4b5563;
+        --gray-700: #374151;
+        --gray-900: #111827;
+
+        --font-body: "IBM Plex Sans", -apple-system, sans-serif;
+        --font-display: "DM Serif Display", Georgia, serif;
+
+        --shadow-sm: 0 1px 2px 0 rgba(10, 36, 99, 0.05);
+        --shadow-md: 0 4px 6px -1px rgba(10, 36, 99, 0.1);
+        --shadow-lg: 0 10px 15px -3px rgba(10, 36, 99, 0.1);
+        --shadow-xl: 0 20px 25px -5px rgba(10, 36, 99, 0.1);
+
+        --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      /* ==================== RESET & BASE ==================== */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: var(--font-body);
+        background: var(--white);
+        color: var(--gray-900);
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+
+      /* ==================== NAVIGATION ==================== */
+      .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--gray-200);
+        transition: var(--transition);
+      }
+
+      .navbar.scrolled {
+        box-shadow: var(--shadow-md);
+      }
+
+      .nav-container {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-family: var(--font-display);
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--navy-primary);
+        text-decoration: none;
+        letter-spacing: -0.02em;
+      }
+
+      .nav-menu {
+        display: flex;
+        gap: 2rem;
+        list-style: none;
+        align-items: center;
+      }
+
+      .nav-link {
+        color: var(--gray-700);
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 0.95rem;
+        transition: var(--transition);
+        position: relative;
+      }
+
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--navy-primary);
+        transition: var(--transition);
+      }
+
+      .nav-link:hover {
+        color: var(--navy-primary);
+      }
+
+      .nav-link:hover::after {
+        width: 100%;
+      }
+
+      .mobile-toggle {
+        display: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0.5rem;
+      }
+
+      .mobile-toggle span {
+        display: block;
+        width: 25px;
+        height: 2px;
+        background: var(--navy-primary);
+        margin: 5px 0;
+        transition: var(--transition);
+      }
+
+      /* ==================== HERO SECTION ==================== */
+      .hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        padding: 8rem 2rem 4rem;
+        background: linear-gradient(
+          135deg,
+          var(--off-white) 0%,
+          var(--white) 100%
+        );
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        right: -20%;
+        width: 800px;
+        height: 800px;
+        background: radial-gradient(
+          circle,
+          rgba(10, 36, 99, 0.03) 0%,
+          transparent 70%
+        );
+        border-radius: 50%;
+      }
+
+      .hero-container {
+        max-width: 1280px;
+        margin: 0 auto;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        gap: 4rem;
+        align-items: center;
+        position: relative;
+        z-index: 1;
+      }
+
+      .hero-content {
+        animation: fadeInUp 0.8s ease-out;
+      }
+
+      .hero-tag {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        background: rgba(10, 36, 99, 0.08);
+        color: var(--navy-primary);
+        border-radius: 2rem;
+        font-size: 0.875rem;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+        margin-bottom: 1.5rem;
+      }
+
+      .hero-title {
+        font-family: var(--font-display);
+        font-size: 4rem;
+        line-height: 1.1;
+        color: var(--navy-dark);
+        margin-bottom: 1.5rem;
+        letter-spacing: -0.02em;
+      }
+
+      .hero-title .highlight {
+        color: var(--navy-primary);
+        position: relative;
+        display: inline-block;
+      }
+
+      .hero-subtitle {
+        font-size: 1.25rem;
+        color: var(--gray-600);
+        margin-bottom: 2rem;
+        line-height: 1.8;
+        max-width: 600px;
+      }
+
+      .hero-cta {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+
+      .btn {
+        padding: 1rem 2rem;
+        border-radius: 0.5rem;
+        font-weight: 600;
+        font-size: 1rem;
+        text-decoration: none;
+        transition: var(--transition);
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        cursor: pointer;
+        border: none;
+      }
+
+      .btn-primary {
+        background: var(--navy-primary);
+        color: var(--white);
+        box-shadow: var(--shadow-lg);
+      }
+
+      .btn-primary:hover {
+        background: var(--navy-dark);
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-xl);
+      }
+
+      .btn-secondary {
+        background: transparent;
+        color: var(--navy-primary);
+        border: 2px solid var(--navy-primary);
+      }
+
+      .btn-secondary:hover {
+        background: var(--navy-primary);
+        color: var(--white);
+        transform: translateY(-2px);
+      }
+
+      /* Hero Visual */
+      .hero-visual {
+        position: relative;
+        animation: fadeInRight 0.8s ease-out;
+      }
+
+      .profile-card {
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(10, 36, 99, 0.1);
+        border-radius: 1.5rem;
+        padding: 2rem;
+        box-shadow: var(--shadow-xl);
+        transition: var(--transition);
+      }
+
+      .profile-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 25px 50px -12px rgba(10, 36, 99, 0.15);
+      }
+
+      .profile-image {
+        width: 100%;
+        aspect-ratio: 1;
+        border-radius: 1rem;
+        object-fit: cover;
+        margin-bottom: 1.5rem;
+        box-shadow: var(--shadow-lg);
+      }
+
+      /* Quick Stats */
+      .quick-stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+      }
+
+      .stat-card {
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(10, 36, 99, 0.1);
+        border-radius: 1rem;
+        padding: 1.5rem 1rem;
+        text-align: center;
+        transition: var(--transition);
+      }
+
+      .stat-card:hover {
+        background: rgba(10, 36, 99, 0.05);
+        border-color: var(--navy-primary);
+        transform: translateY(-5px);
+      }
+
+      .stat-number {
+        font-family: var(--font-display);
+        font-size: 2.5rem;
+        color: var(--navy-primary);
+        font-weight: 700;
+        line-height: 1;
+        margin-bottom: 0.5rem;
+      }
+
+      .stat-label {
+        font-size: 0.875rem;
+        color: var(--gray-600);
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      /* ==================== SECTIONS ==================== */
+      .section {
+        padding: 6rem 2rem;
+        position: relative;
+      }
+
+      .section-alt {
+        background: var(--gray-50);
+      }
+
+      .container {
+        max-width: 1280px;
+        margin: 0 auto;
+      }
+
+      .section-header {
+        text-align: center;
+        margin-bottom: 4rem;
+        animation: fadeInUp 0.6s ease-out;
+      }
+
+      .section-tag {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        background: rgba(10, 36, 99, 0.08);
+        color: var(--navy-primary);
+        border-radius: 2rem;
+        font-size: 0.875rem;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+        margin-bottom: 1rem;
+      }
+
+      .section-title {
+        font-family: var(--font-display);
+        font-size: 3rem;
+        color: var(--navy-dark);
+        margin-bottom: 1rem;
+        letter-spacing: -0.02em;
+      }
+
+      .section-description {
+        font-size: 1.125rem;
+        color: var(--gray-600);
+        max-width: 600px;
+        margin: 0 auto;
+        line-height: 1.8;
+      }
+
+      /* ==================== ABOUT SECTION ==================== */
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+      }
+
+      .about-image {
+        position: relative;
+      }
+
+      .about-image img {
+        width: 100%;
+        border-radius: 1rem;
+        box-shadow: var(--shadow-xl);
+      }
+
+      .about-content h3 {
+        font-family: var(--font-display);
+        font-size: 1.75rem;
+        color: var(--navy-primary);
+        margin-bottom: 1rem;
+      }
+
+      .about-content p {
+        color: var(--gray-700);
+        line-height: 1.8;
+        margin-bottom: 1rem;
+      }
+
+      .about-content p strong {
+        color: var(--navy-primary);
+      }
+
+      /* ==================== SKILLS SECTION ==================== */
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+
+      .skill-card {
+        background: var(--white);
+        border: 1px solid var(--gray-200);
+        border-radius: 1rem;
+        padding: 2rem;
+        transition: var(--transition);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .skill-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 4px;
+        height: 0;
+        background: var(--navy-primary);
+        transition: var(--transition);
+      }
+
+      .skill-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-lg);
+        border-color: var(--navy-primary);
+      }
+
+      .skill-card:hover::before {
+        height: 100%;
+      }
+
+      .skill-icon {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        display: block;
+      }
+
+      .skill-card h3 {
+        font-size: 1.25rem;
+        color: var(--navy-dark);
+        margin-bottom: 1rem;
+        font-weight: 600;
+      }
+
+      .skill-list {
+        list-style: none;
+      }
+
+      .skill-list li {
+        color: var(--gray-600);
+        padding: 0.5rem 0;
+        padding-left: 1.5rem;
+        position: relative;
+        font-size: 0.95rem;
+      }
+
+      .skill-list li::before {
+        content: "→";
+        position: absolute;
+        left: 0;
+        color: var(--navy-primary);
+        font-weight: 600;
+      }
+
+      /* ==================== PROJECTS SECTION ==================== */
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 2rem;
+      }
+
+      .project-card {
+        background: var(--white);
+        border: 1px solid var(--gray-200);
+        border-radius: 1rem;
+        overflow: hidden;
+        transition: var(--transition);
+        cursor: pointer;
+      }
+
+      .project-card:hover {
+        transform: translateY(-8px);
+        box-shadow: var(--shadow-xl);
+        border-color: var(--navy-primary);
+      }
+
+      .project-image {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        transition: var(--transition);
+      }
+
+      .project-card:hover .project-image {
+        transform: scale(1.05);
+      }
+
+      .project-content {
+        padding: 1.5rem;
+      }
+
+      .project-title {
+        font-size: 1.25rem;
+        color: var(--navy-dark);
+        font-weight: 600;
+        margin-bottom: 0.75rem;
+      }
+
+      .project-description {
+        color: var(--gray-600);
+        line-height: 1.6;
+        margin-bottom: 1rem;
+        font-size: 0.95rem;
+      }
+
+      .project-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .project-tag {
+        padding: 0.25rem 0.75rem;
+        background: rgba(10, 36, 99, 0.08);
+        color: var(--navy-primary);
+        border-radius: 1rem;
+        font-size: 0.75rem;
+        font-weight: 500;
+      }
+
+      .project-links {
+        display: flex;
+        gap: 1rem;
+      }
+
+      .project-link {
+        color: var(--navy-primary);
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.875rem;
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+        transition: var(--transition);
+      }
+
+      .project-link:hover {
+        color: var(--blue-accent);
+        gap: 0.5rem;
+      }
+
+      /* ==================== CERTIFICATIONS SECTION ==================== */
+      .certifications-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+
+      .cert-card {
+        background: var(--white);
+        border: 1px solid var(--gray-200);
+        border-radius: 1rem;
+        padding: 2rem;
+        transition: var(--transition);
+        cursor: pointer;
+        position: relative;
+      }
+
+      .cert-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-lg);
+        border-color: var(--navy-primary);
+      }
+
+      .cert-badge {
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(
+          135deg,
+          var(--navy-primary),
+          var(--blue-accent)
+        );
+        border-radius: 0.75rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.75rem;
+        margin-bottom: 1rem;
+      }
+
+      .cert-title {
+        font-size: 1.125rem;
+        color: var(--navy-dark);
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+      }
+
+      .cert-issuer {
+        color: var(--navy-primary);
+        font-weight: 500;
+        margin-bottom: 0.5rem;
+        font-size: 0.95rem;
+      }
+
+      .cert-date {
+        color: var(--gray-600);
+        font-size: 0.875rem;
+      }
+
+      /* ==================== EXPERIENCE SECTION ==================== */
+      .timeline {
+        max-width: 900px;
+        margin: 0 auto;
+        position: relative;
+        padding-left: 3rem;
+      }
+
+      .timeline::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: linear-gradient(
+          to bottom,
+          var(--navy-primary),
+          var(--blue-accent)
+        );
+      }
+
+      .timeline-item {
+        position: relative;
+        margin-bottom: 3rem;
+        animation: fadeInLeft 0.6s ease-out;
+      }
+
+      .timeline-dot {
+        position: absolute;
+        left: -3.4rem;
+        top: 0;
+        width: 16px;
+        height: 16px;
+        background: var(--navy-primary);
+        border: 4px solid var(--white);
+        border-radius: 50%;
+        box-shadow: 0 0 0 4px rgba(10, 36, 99, 0.1);
+      }
+
+      .timeline-content {
+        background: var(--white);
+        border: 1px solid var(--gray-200);
+        border-radius: 1rem;
+        padding: 2rem;
+        transition: var(--transition);
+      }
+
+      .timeline-content:hover {
+        box-shadow: var(--shadow-lg);
+        border-color: var(--navy-primary);
+        transform: translateX(10px);
+      }
+
+      .timeline-date {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        background: rgba(10, 36, 99, 0.08);
+        color: var(--navy-primary);
+        border-radius: 2rem;
+        font-size: 0.875rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+      }
+
+      .timeline-title {
+        font-size: 1.5rem;
+        color: var(--navy-dark);
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+      }
+
+      .timeline-company {
+        color: var(--navy-primary);
+        font-weight: 500;
+        margin-bottom: 1rem;
+      }
+
+      .timeline-description {
+        color: var(--gray-700);
+        line-height: 1.8;
+      }
+
+      /* ==================== CONTACT SECTION ==================== */
+      .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr 1.5fr;
+        gap: 3rem;
+        align-items: start;
+      }
+
+      .contact-info-cards {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+
+      .contact-info-card {
+        background: var(--white);
+        border: 1px solid var(--gray-200);
+        border-radius: 1rem;
+        padding: 1.5rem;
+        transition: var(--transition);
+      }
+
+      .contact-info-card:hover {
+        border-color: var(--navy-primary);
+        box-shadow: var(--shadow-md);
+      }
+
+      .contact-icon {
+        width: 50px;
+        height: 50px;
+        background: linear-gradient(
+          135deg,
+          var(--navy-primary),
+          var(--blue-accent)
+        );
+        border-radius: 0.75rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .contact-info-card h3 {
+        font-size: 1.125rem;
+        color: var(--navy-dark);
+        margin-bottom: 0.5rem;
+      }
+
+      .contact-info-card p,
+      .contact-info-card a {
+        color: var(--gray-600);
+        text-decoration: none;
+        transition: var(--transition);
+      }
+
+      .contact-info-card a:hover {
+        color: var(--navy-primary);
+      }
+
+      .social-links {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+
+      .social-link {
+        width: 45px;
+        height: 45px;
+        background: rgba(10, 36, 99, 0.08);
+        border-radius: 0.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--navy-primary);
+        text-decoration: none;
+        font-size: 1.25rem;
+        transition: var(--transition);
+      }
+
+      .social-link:hover {
+        background: var(--navy-primary);
+        color: var(--white);
+        transform: translateY(-3px);
+      }
+
+      /* Contact Form */
+      .contact-form {
+        background: var(--white);
+        border: 1px solid var(--gray-200);
+        border-radius: 1rem;
+        padding: 2rem;
+      }
+
+      .form-group {
+        margin-bottom: 1.5rem;
+      }
+
+      .form-group label {
+        display: block;
+        color: var(--navy-dark);
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        font-size: 0.95rem;
+      }
+
+      .form-control {
+        width: 100%;
+        padding: 0.875rem 1rem;
+        border: 1px solid var(--gray-300);
+        border-radius: 0.5rem;
+        font-family: var(--font-body);
+        font-size: 1rem;
+        transition: var(--transition);
+        background: var(--white);
+      }
+
+      .form-control:focus {
+        outline: none;
+        border-color: var(--navy-primary);
+        box-shadow: 0 0 0 3px rgba(10, 36, 99, 0.1);
+      }
+
+      textarea.form-control {
+        resize: vertical;
+        min-height: 150px;
+      }
+
+      .form-status {
+        padding: 1rem;
+        border-radius: 0.5rem;
+        margin-bottom: 1rem;
+        display: none;
+      }
+
+      .form-status.success {
+        background: #d1fae5;
+        color: #065f46;
+        border: 1px solid #a7f3d0;
+      }
+
+      .form-status.error {
+        background: #fee2e2;
+        color: #991b1b;
+        border: 1px solid #fecaca;
+      }
+
+      /* ==================== FOOTER ==================== */
+      .footer {
+        background: var(--navy-dark);
+        color: var(--white);
+        padding: 4rem 2rem 2rem;
+      }
+
+      .footer-content {
+        max-width: 1280px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        gap: 3rem;
+        margin-bottom: 3rem;
+      }
+
+      .footer-section h3 {
+        font-family: var(--font-display);
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+      }
+
+      .footer-section p {
+        color: rgba(255, 255, 255, 0.7);
+        line-height: 1.8;
+        margin-bottom: 1rem;
+      }
+
+      .footer-links {
+        list-style: none;
+      }
+
+      .footer-links li {
+        margin-bottom: 0.75rem;
+      }
+
+      .footer-links a {
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        transition: var(--transition);
+      }
+
+      .footer-links a:hover {
+        color: var(--white);
+        padding-left: 5px;
+      }
+
+      .footer-bottom {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding-top: 2rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: center;
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+      /* ==================== ANIMATIONS ==================== */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeInRight {
+        from {
+          opacity: 0;
+          transform: translateX(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes fadeInLeft {
+        from {
+          opacity: 0;
+          transform: translateX(-30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      /* Scroll animations */
+      .scroll-animate {
+        opacity: 0;
+        transform: translateY(30px);
+        transition:
+          opacity 0.6s ease-out,
+          transform 0.6s ease-out;
+      }
+
+      .scroll-animate.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* ==================== RESPONSIVE ==================== */
+      @media (max-width: 1024px) {
+        .hero-container {
+          grid-template-columns: 1fr;
+          gap: 3rem;
+        }
+
+        .hero-visual {
+          order: -1;
+        }
+
+        .hero-title {
+          font-size: 3rem;
+        }
+
+        .about-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .contact-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .footer-content {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .nav-menu {
+          position: fixed;
+          top: 70px;
+          left: -100%;
+          width: 100%;
+          flex-direction: column;
+          background: var(--white);
+          padding: 2rem;
+          box-shadow: var(--shadow-lg);
+          transition: var(--transition);
+          gap: 1rem;
+        }
+
+        .nav-menu.active {
+          left: 0;
+        }
+
+        .mobile-toggle {
+          display: block;
+        }
+
+        .hero {
+          padding: 6rem 1.5rem 3rem;
+        }
+
+        .hero-title {
+          font-size: 2.5rem;
+        }
+
+        .section {
+          padding: 4rem 1.5rem;
+        }
+
+        .section-title {
+          font-size: 2rem;
+        }
+
+        .quick-stats {
+          grid-template-columns: 1fr;
+        }
+
+        .projects-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .footer-content {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .hero-title {
+          font-size: 2rem;
+        }
+
+        .btn {
+          padding: 0.875rem 1.5rem;
+          font-size: 0.95rem;
+        }
+
+        .stat-number {
+          font-size: 2rem;
+        }
+      }
+
+      /* ==================== MODAL FOR PROJECT PDF ==================== */
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 2000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        animation: fadeIn 0.3s;
+      }
+
+      .modal.active {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .modal-content {
+        background: var(--white);
+        border-radius: 1rem;
+        max-width: 90%;
+        max-height: 90%;
+        width: 1000px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .modal-header {
+        padding: 1.5rem 2rem;
+        border-bottom: 1px solid var(--gray-200);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .modal-title {
+        font-size: 1.25rem;
+        color: var(--navy-dark);
+        font-weight: 600;
+      }
+
+      .modal-close {
+        background: none;
+        border: none;
+        font-size: 2rem;
+        color: var(--gray-600);
+        cursor: pointer;
+        transition: var(--transition);
+      }
+
+      .modal-close:hover {
+        color: var(--navy-primary);
+      }
+
+      .modal-body {
+        padding: 2rem;
+        max-height: calc(90vh - 100px);
+        overflow-y: auto;
+      }
+
+      .modal-body iframe {
+        width: 100%;
+        height: 600px;
+        border: none;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ==================== NAVIGATION ==================== -->
+    <nav class="navbar" id="navbar">
+      <div class="nav-container">
+        <a href="#" class="logo">Moh Daffa.</a>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="#home" class="nav-link">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="certifDA.html" class="nav-link">Certifications</a></li>
+          <li><a href="#experience" class="nav-link">Experience</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+        <button class="mobile-toggle" id="mobileToggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <section class="hero" id="home">
+      <div class="hero-container">
+        <div class="hero-content">
+          <span class="hero-tag">DATA ANALYST & DEVELOPER</span>
+          <h1 class="hero-title">
+            Mohammad Daffa<br />
+            <span class="highlight">My Honest Anugerah</span>
+          </h1>
+          <p class="hero-subtitle">
+            Fresh graduate in Computer Science specializing in Data Analysis and
+            Python. Experienced in turning data into actionable insights through
+            Power BI and machine learning.
+          </p>
+          <div class="hero-cta">
+            <a href="certifDA.html" class="btn btn-primary">
+              View Certifications
+              <span>→</span>
+            </a>
+            <a href="#skills" class="btn btn-primary">
+              View Skills
+              <span>→</span>
+            </a>
+            <a href="#projects" class="btn btn-primary">
+              View Projects
+              <span>→</span>
+            </a>
+
+            <a
+              class="btn btn-secondary"
+              onclick="openCertModal('CV', 'assets/cv/cv-moh-daffa.pdf')"
+            >
+              Download CV
+              <span>↓</span>
+            </a>
+
+            <a href="#contact" class="btn btn-secondary"> Get in Touch </a>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="profile-card">
+            <img
+              src="assets/images/dafa.jpg"
+              alt="Mohammad Daffa My Honest Anugerah"
+              class="profile-image"
+              onerror="
+                this.src =
+                  'https://ui-avatars.com/api/?name=Mohammad+Daffa&size=400&background=0A2463&color=fff&bold=true'
+              "
+            />
+            <div class="quick-stats">
+              <div class="stat-card">
+                <div class="stat-number">3+</div>
+                <div class="stat-label">Years Study</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-number">10+</div>
+                <div class="stat-label">Projects</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-number">10+</div>
+                <div class="stat-label">Certifications</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== ABOUT SECTION ==================== -->
+    <section class="section section-alt" id="about">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-image scroll-animate">
+            <img
+              src="assets/images/gedung-tau.jpg"
+              alt="About Me"
+              onerror="
+                this.src =
+                  'https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=600&fit=crop'
+              "
+            />
+          </div>
+          <div class="about-content scroll-animate">
+            <span class="section-tag">ABOUT ME</span>
+            <h2 class="section-title">Passionate About Data & Technology</h2>
+            <p>
+              I am a fresh graduate in Computer Science with a strong focus on
+              <strong>Data Analysis and Python programming.</strong> I am
+              detail-oriented and adaptable, with a strong interest in
+              transforming data into meaningful insights that support
+              data-driven decision-making.
+            </p>
+            <p>
+              During my internship at <strong>United Tractors</strong>, I worked
+              with operational data by validating and cross-checking data
+              between SAP and Excel to ensure accuracy and consistency. I also
+              contributed to the development of a digital solution that improved
+              access to technical documentation, helping enhance operational
+              efficiency in the field.
+            </p>
+            <p>
+              Additionally, I gained hands-on experience through academic and
+              bootcamp projects involving
+              <strong>
+                data preprocessing, exploratory data analysis (EDA), machine
+                learning, and data visualization</strong
+              >. I built and evaluated machine learning models using Python and
+              designed interactive <strong>Power BI dashboards</strong> to
+              communicate insights effectively. I am eager to grow as a Junior
+              Data Analyst and contribute through accurate analysis and clear
+              data-driven insights.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SKILLS SECTION ==================== -->
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">EXPERTISE</span>
+          <h2 class="section-title">Skills & Technologies</h2>
+          <p class="section-description">
+            Technical skills and tools that I use in data analysis,
+            visualization, and software development.
+          </p>
+        </div>
+
+        <div class="skills-grid">
+          <div class="skill-card scroll-animate">
+            <span class="skill-icon">📊</span>
+            <h3>Data Analysis & Visualization</h3>
+            <ul class="skill-list">
+              <li>Data Analysis & Analytics</li>
+              <li>Data Cleaning & Preparation</li>
+              <li>Data Visualization</li>
+              <li>Charts, Graphs & Dashboards</li>
+              <li>Conditional Formatting</li>
+              <li>Pivot Tables</li>
+              <li>Exploratory Data Analysis (EDA)</li>
+            </ul>
+          </div>
+
+          <div class="skill-card scroll-animate">
+            <span class="skill-icon">🧰</span>
+            <h3>BI Tools & Spreadsheets</h3>
+            <ul class="skill-list">
+              <li>Microsoft Excel</li>
+              <li>Microsoft Power BI</li>
+              <li>Google Sheets</li>
+            </ul>
+          </div>
+
+          <div class="skill-card scroll-animate">
+            <span class="skill-icon">🗄️</span>
+            <h3>Database & Data Management</h3>
+            <ul class="skill-list">
+              <li>SQL</li>
+              <li>Oracle Database</li>
+              <li>Relational Databases</li>
+              <li>Database Design</li>
+              <li>Entity Relationship Diagram (ERD)</li>
+              <li>Data Integrity</li>
+            </ul>
+          </div>
+
+          <div class="skill-card scroll-animate">
+            <span class="skill-icon">🤖</span>
+            <h3>Data Science & Machine Learning</h3>
+            <ul class="skill-list">
+              <li>Data Science</li>
+              <li>Machine Learning</li>
+              <li>Data Preparation</li>
+              <li>Exploratory Data Analysis (EDA)</li>
+              <li>Model Evaluation</li>
+            </ul>
+          </div>
+
+          <div class="skill-card scroll-animate">
+            <span class="skill-icon">💻</span>
+            <h3>Programming & Development</h3>
+            <ul class="skill-list">
+              <li>Python</li>
+              <li>Object-Oriented Programming (OOP)</li>
+              <li>HTML & CSS</li>
+              <li>Tailwind CSS</li>
+              <li>JavaScript</li>
+            </ul>
+          </div>
+
+          <div class="skill-card scroll-animate">
+            <span class="skill-icon">☁️</span>
+            <h3>AI, Cloud & Dev Tools</h3>
+            <ul class="skill-list">
+              <li>Generative AI Development</li>
+              <li>Large Language Models (LLM)</li>
+              <li>Prompt Engineering</li>
+              <li>Retrieval-Augmented Generation (RAG)</li>
+              <li>Microsoft Azure</li>
+              <li>Git & GitHub</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== PROJECTS SECTION ==================== -->
+    <section class="section section-alt" id="projects">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">PORTFOLIO</span>
+          <h2 class="section-title">Featured Projects</h2>
+          <p class="section-description">
+            A selection of my recent work in data analysis, visualization, and
+            development.
+          </p>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Project 1 -->
+          <div class="project-card scroll-animate">
+            <img
+              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=500&fit=crop"
+              alt="Sales Dashboard"
+              class="project-image"
+            />
+            <div class="project-content">
+              <h3 class="project-title">Sales Analytics Dashboard</h3>
+              <p class="project-description">
+                Interactive Power BI dashboard analyzing sales trends, customer
+                segmentation, and revenue metrics with real-time data
+                visualization.
+              </p>
+              <div class="project-tags">
+                <span class="project-tag">Power BI</span>
+                <span class="project-tag">Excel</span>
+                <span class="project-tag">Data Analysis</span>
+              </div>
+              <div class="project-links">
+                <a
+                  href="#"
+                  class="project-link"
+                  onclick="
+                    openProjectModal(
+                      'Sales Analytics Dashboard',
+                      'assets/projects/project1.pdf',
+                    );
+                    return false;
+                  "
+                >
+                  View Report →
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="project-card scroll-animate">
+            <img
+              src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&h=500&fit=crop"
+              alt="ML Model"
+              class="project-image"
+            />
+            <div class="project-content">
+              <h3 class="project-title">Customer Churn Prediction</h3>
+              <p class="project-description">
+                Developed predictive model using Python and scikit-learn for
+                customer churn prediction with 85% accuracy rate.
+              </p>
+              <div class="project-tags">
+                <span class="project-tag">Python</span>
+                <span class="project-tag">Machine Learning</span>
+                <span class="project-tag">EDA</span>
+              </div>
+              <div class="project-links">
+                <a
+                  href="#"
+                  class="project-link"
+                  onclick="
+                    openProjectModal(
+                      'Customer Churn Prediction',
+                      'assets/projects/project2.pdf',
+                    );
+                    return false;
+                  "
+                >
+                  View Report →
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="project-card scroll-animate">
+            <img
+              src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=500&fit=crop"
+              alt="Financial Analysis"
+              class="project-image"
+            />
+            <div class="project-content">
+              <h3 class="project-title">Financial Analysis Dashboard</h3>
+              <p class="project-description">
+                Advanced Excel dashboard with pivot tables, VLOOKUP, and
+                automated reports for financial performance tracking.
+              </p>
+              <div class="project-tags">
+                <span class="project-tag">Excel</span>
+                <span class="project-tag">Pivot Tables</span>
+                <span class="project-tag">VBA</span>
+              </div>
+              <div class="project-links">
+                <a
+                  href="#"
+                  class="project-link"
+                  onclick="
+                    openProjectModal(
+                      'Financial Analysis Dashboard',
+                      'assets/projects/project3.pdf',
+                    );
+                    return false;
+                  "
+                >
+                  View Report →
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 4 -->
+          <div class="project-card scroll-animate">
+            <img
+              src="https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=800&h=500&fit=crop"
+              alt="Database Design"
+              class="project-image"
+            />
+            <div class="project-content">
+              <h3 class="project-title">E-Commerce Database Design</h3>
+              <p class="project-description">
+                Comprehensive database design and implementation for e-commerce
+                platform using Oracle Database with optimized queries.
+              </p>
+              <div class="project-tags">
+                <span class="project-tag">SQL</span>
+                <span class="project-tag">Oracle</span>
+                <span class="project-tag">ERD</span>
+              </div>
+              <div class="project-links">
+                <a
+                  href="#"
+                  class="project-link"
+                  onclick="
+                    openProjectModal(
+                      'E-Commerce Database Design',
+                      'assets/projects/project4.pdf',
+                    );
+                    return false;
+                  "
+                >
+                  View Report →
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 5 -->
+          <div class="project-card scroll-animate">
+            <img
+              src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=500&fit=crop"
+              alt="Web Application"
+              class="project-image"
+            />
+            <div class="project-content">
+              <h3 class="project-title">Data Visualization Web App</h3>
+              <p class="project-description">
+                Full-stack web application for interactive data visualization
+                using React, Node.js, and Chart.js library.
+              </p>
+              <div class="project-tags">
+                <span class="project-tag">React</span>
+                <span class="project-tag">JavaScript</span>
+                <span class="project-tag">HTML/CSS</span>
+              </div>
+              <div class="project-links">
+                <a
+                  href="#"
+                  class="project-link"
+                  onclick="
+                    openProjectModal(
+                      'Data Visualization Web App',
+                      'assets/projects/project5.pdf',
+                    );
+                    return false;
+                  "
+                >
+                  View Report →
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 6 -->
+          <div class="project-card scroll-animate">
+            <img
+              src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=500&fit=crop"
+              alt="AI Chatbot"
+              class="project-image"
+            />
+            <div class="project-content">
+              <h3 class="project-title">LLM-Powered Chatbot</h3>
+              <p class="project-description">
+                Built intelligent chatbot using Azure OpenAI with RAG
+                implementation for document-based question answering.
+              </p>
+              <div class="project-tags">
+                <span class="project-tag">Azure</span>
+                <span class="project-tag">LLM</span>
+                <span class="project-tag">RAG</span>
+              </div>
+              <div class="project-links">
+                <a
+                  href="#"
+                  class="project-link"
+                  onclick="
+                    openProjectModal(
+                      'LLM-Powered Chatbot',
+                      'assets/projects/project6.pdf',
+                    );
+                    return false;
+                  "
+                >
+                  View Report →
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== EXPERIENCE SECTION ==================== -->
+    <section class="section section-alt" id="experience">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">JOURNEY</span>
+          <h2 class="section-title">Professional Experience</h2>
+          <p class="section-description">
+            My professional journey and key milestones.
+          </p>
+        </div>
+
+        <div class="timeline">
+          <!-- Experience 1 -->
+          <div class="timeline-item scroll-animate">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-date">Jun 2024 - Aug 2024</span>
+              <h3 class="timeline-title">Data Analyst Intern</h3>
+              <p class="timeline-company">United Tractors</p>
+              <p class="timeline-description">
+                Responsible for data entry, data administration, and data
+                analysis of operational data. Maintained data accuracy and
+                consistency, supported administrative processes with high
+                attention to detail. Contributed to efficiency improvement
+                initiatives by helping integrate operational guideline documents
+                into digital platforms.
+              </p>
+            </div>
+          </div>
+
+          <!-- Experience 2 -->
+          <div class="timeline-item scroll-animate">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-date">Jan 2024 - May 2024</span>
+              <h3 class="timeline-title">Machine Learning Research</h3>
+              <p class="timeline-company">Thesis Project - University</p>
+              <p class="timeline-description">
+                Conducted comprehensive Exploratory Data Analysis (EDA) to
+                understand data characteristics, analyze distributions and
+                patterns, and identify potential anomalies before modeling
+                process. Enhanced analytical thinking and attention to detail in
+                data processing and interpretation.
+              </p>
+            </div>
+          </div>
+
+          <!-- Experience 3 -->
+          <div class="timeline-item scroll-animate">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-date">2023 - 2024</span>
+              <h3 class="timeline-title">Data Visualization Bootcamp</h3>
+              <p class="timeline-company">Online Certification Program</p>
+              <p class="timeline-description">
+                Completed intensive Power BI certification and bootcamp with
+                case studies using bakery and Superstore datasets. Built
+                comprehensive dashboards to display sales trends, product
+                performance, and key metrics. Gained expertise in data
+                structure, appropriate visual selection, and systematic
+                information presentation.
+              </p>
+            </div>
+          </div>
+
+          <!-- Experience 4 -->
+          <div class="timeline-item scroll-animate">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-date">2022 - Present</span>
+              <h3 class="timeline-title">Freelance Data Analyst</h3>
+              <p class="timeline-company">Various Clients</p>
+              <p class="timeline-description">
+                Provided data analysis services including Excel dashboard
+                creation, data cleaning, and visualization for small to medium
+                businesses. Delivered actionable insights that helped clients
+                make data-driven decisions.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CONTACT SECTION ==================== -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">LET'S CONNECT</span>
+          <h2 class="section-title">Get In Touch</h2>
+          <p class="section-description">
+            Have a project in mind or want to collaborate? Feel free to reach
+            out!
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-info-cards">
+            <!-- Email Card -->
+            <div class="contact-info-card scroll-animate">
+              <div class="contact-icon">✉️</div>
+              <h3>Email</h3>
+              <a
+                href="/cdn-cgi/l/email-protection#f69b999e979b9b979292979090979b8f9e9998938582b6919b979f9ad895999b"
+                ><span
+                  class="__cf_email__"
+                  data-cfemail="87eae8efe6eaeae6e3e3e6e1e1e6eafeefe8e9e2f4f3c7e0eae6eeeba9e4e8ea"
+                  >[email&#160;protected]</span
+                ></a
+              >
+            </div>
+
+            <!-- Phone Card -->
+            <div class="contact-info-card scroll-animate">
+              <div class="contact-icon">📱</div>
+              <h3>WhatsApp</h3>
+              <a href="https://wa.me/6287859165930" target="_blank"
+                >+62 878-5916-5930</a
+              >
+            </div>
+
+            <!-- Location Card -->
+            <div class="contact-info-card scroll-animate">
+              <div class="contact-icon">📍</div>
+              <h3>Location</h3>
+              <p>
+                Jalan Swadharma Utara Dalam No.1, RT.7/RW.8, Kelurahan Ulujami,
+                Pesanggrahan, Jakarta Selatan, DKI Jakarta
+              </p>
+            </div>
+
+            <!-- Social Links -->
+            <div class="contact-info-card scroll-animate">
+              <div class="contact-icon">🔗</div>
+              <h3>Social Media</h3>
+              <div class="social-links">
+                <a
+                  href="https://github.com/mohdaffamyhonest-max"
+                  target="_blank"
+                  class="social-link"
+                  title="GitHub"
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                    />
+                  </svg>
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/mohammaddaffamyhonest"
+                  target="_blank"
+                  class="social-link"
+                  title="LinkedIn"
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+                    />
+                  </svg>
+                </a>
+                <a
+                  href="/cdn-cgi/l/email-protection#2f4240474e42424e4b4b4e49494e42564740414a5c5b6f48424e4643014c4042"
+                  class="social-link"
+                  title="Email"
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <rect x="2" y="4" width="20" height="16" rx="2" />
+                    <path d="m2 7 10 7 10-7" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <div class="contact-form scroll-animate">
+            <div id="formStatus" class="form-status"></div>
+            <form id="contactForm">
+              <div class="form-group">
+                <label for="name">Full Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  class="form-control"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="form-control"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  class="form-control"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  class="form-control"
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary" style="width: 100%">
+                Send Message
+                <span>→</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Mohammad Daffa My Honest Anugerah</h3>
+          <p>Data Analyst | Data Science | Web Developer</p>
+          <p>
+            Passionate about transforming data into actionable insights and
+            building innovative solutions.
+          </p>
+          <div class="social-links">
+            <a
+              href="https://github.com/mohdaffamyhonest-max"
+              target="_blank"
+              class="social-link"
+            >
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/mohammaddaffamyhonest"
+              target="_blank"
+              class="social-link"
+            >
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+                />
+              </svg>
+            </a>
+            <a
+              href="/cdn-cgi/l/email-protection#4d2022252c20202c29292c2b2b2c2034252223283e390d2a202c2421632e2220"
+              class="social-link"
+            >
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <rect x="2" y="4" width="20" height="16" rx="2" />
+                <path d="m2 7 10 7 10-7" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#certifications">Certifications</a></li>
+            <li><a href="#experience">Experience</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3>Services</h3>
+          <ul class="footer-links">
+            <li><a href="#">Data Analysis</a></li>
+            <li><a href="#">Dashboard Development</a></li>
+            <li><a href="#">Machine Learning</a></li>
+            <li><a href="#">Web Development</a></li>
+            <li><a href="#">Database Design</a></li>
+            <li><a href="#">Consulting</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3>Contact Info</h3>
+          <ul class="footer-links">
+            <li>mohammaddaffamyhonest@gmail.com</li>
+            <li>+62 878-5916-5930</li>
+            <li>
+              Jalan Swadharma Utara Dalam No.1, RT.7/RW.8, Kelurahan Ulujami,
+              Pesanggrahan, Jakarta Selatan, DKI Jakarta
+            </li>
+            <li>Available for freelance work</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>
+          &copy; 2025 Mohammad Daffa My Honest Anugerah. All rights reserved.
+        </p>
+      </div>
+    </footer>
+
+    <!-- ==================== PROJECT/CERT MODAL ==================== -->
+    <div id="projectModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" id="modalTitle">Project Report</h3>
+          <button class="modal-close" onclick="closeModal()">&times;</button>
+        </div>
+        <div class="modal-body">
+          <iframe id="modalPdf" src=""></iframe>
+          <img id="modalImage" src="" alt="Certificate" style="display: none" />
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== JAVASCRIPT ==================== -->
+    <script
+      data-cfasync="false"
+      src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"
+    ></script>
+    <script>
+      // ========== NAVBAR SCROLL EFFECT ==========
+      const navbar = document.getElementById("navbar");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 50) {
+          navbar.classList.add("scrolled");
+        } else {
+          navbar.classList.remove("scrolled");
+        }
+      });
+
+      // ========== MOBILE MENU TOGGLE ==========
+      const mobileToggle = document.getElementById("mobileToggle");
+      const navMenu = document.getElementById("navMenu");
+
+      mobileToggle.addEventListener("click", () => {
+        navMenu.classList.toggle("active");
+      });
+
+      // Close mobile menu when clicking a link
+      document.querySelectorAll(".nav-link").forEach((link) => {
+        link.addEventListener("click", () => {
+          navMenu.classList.remove("active");
+        });
+      });
+
+      // ========== SMOOTH SCROLL ANIMATIONS ==========
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll(".scroll-animate").forEach((el) => {
+        observer.observe(el);
+      });
+
+      // ========== PROJECT/CERT MODAL FUNCTIONS ==========
+      function openProjectModal(title, pdfUrl) {
+        const modal = document.getElementById("projectModal");
+        const modalTitle = document.getElementById("modalTitle");
+        const modalPdf = document.getElementById("modalPdf");
+        const modalImage = document.getElementById("modalImage");
+
+        modalTitle.textContent = title;
+
+        // Show PDF, hide image
+        modalPdf.src = pdfUrl;
+        modalPdf.style.display = "block";
+        modalImage.style.display = "none";
+
+        modal.classList.add("active");
+        document.body.style.overflow = "hidden";
+      }
+
+      function openCertModal(title, imageUrl) {
+        const modal = document.getElementById("projectModal");
+        const modalTitle = document.getElementById("modalTitle");
+        const modalPdf = document.getElementById("modalPdf");
+        const modalImage = document.getElementById("modalImage");
+
+        modalTitle.textContent = title;
+
+        // Show image, hide PDF
+        modalImage.src = imageUrl;
+        modalImage.alt = title;
+        modalImage.style.display = "block";
+        modalPdf.style.display = "none";
+
+        modal.classList.add("active");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeModal() {
+        const modal = document.getElementById("projectModal");
+        const modalPdf = document.getElementById("modalPdf");
+        const modalImage = document.getElementById("modalImage");
+
+        modal.classList.remove("active");
+        modalPdf.src = "";
+        modalImage.src = "";
+        modalPdf.style.display = "none";
+        modalImage.style.display = "none";
+        document.body.style.overflow = "auto";
+      }
+
+      // Close modal when clicking outside
+      document.getElementById("projectModal").addEventListener("click", (e) => {
+        if (e.target.id === "projectModal") {
+          closeModal();
+        }
+      });
+
+      // Close modal with ESC key
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+          closeModal();
+        }
+      });
+
+      // ========== CONTACT FORM - TELEGRAM API ==========
+      const contactForm = document.getElementById("contactForm");
+      const formStatus = document.getElementById("formStatus");
+
+      contactForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const formData = {
+          name: document.getElementById("name").value,
+          email: document.getElementById("email").value,
+          subject: document.getElementById("subject").value,
+          message: document.getElementById("message").value,
+        };
+
+        // Telegram Bot Configuration
+        const telegramBotToken =
+          "8507809704:AAEIDR5HgedeSc2D5IuDrVTeD21P3yjowrI";
+        const telegramChatId = "8460296394";
+
+        // Format message for Telegram
+        const telegramMessage = `
+🔔 *New Contact Form Submission*
+
+👤 *Name:* ${formData.name}
+📧 *Email:* ${formData.email}
+📝 *Subject:* ${formData.subject}
+
+💬 *Message:*
+${formData.message}
+
+---
+Sent from Portfolio Website
+            `;
+
+        try {
+          const response = await fetch(
+            `https://api.telegram.org/bot${telegramBotToken}/sendMessage`,
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({
+                chat_id: telegramChatId,
+                text: telegramMessage,
+                parse_mode: "Markdown",
+              }),
+            },
+          );
+
+          if (response.ok) {
+            formStatus.textContent =
+              "✅ Message sent successfully! I will get back to you soon.";
+            formStatus.className = "form-status success";
+            formStatus.style.display = "block";
+            contactForm.reset();
+
+            setTimeout(() => {
+              formStatus.style.display = "none";
+            }, 5000);
+          } else {
+            throw new Error("Failed to send message");
+          }
+        } catch (error) {
+          formStatus.textContent =
+            "❌ Failed to send message. Please try again or contact me directly via email.";
+          formStatus.className = "form-status error";
+          formStatus.style.display = "block";
+
+          setTimeout(() => {
+            formStatus.style.display = "none";
+          }, 5000);
+        }
+      });
+
+      // ========== ACTIVE NAV LINK ON SCROLL ==========
+      const sections = document.querySelectorAll("section[id]");
+      const navLinks = document.querySelectorAll(".nav-link");
+
+      window.addEventListener("scroll", () => {
+        let current = "";
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.clientHeight;
+          if (scrollY >= sectionTop - 200) {
+            current = section.getAttribute("id");
+          }
+        });
+
+        navLinks.forEach((link) => {
+          link.classList.remove("active");
+          if (link.getAttribute("href").slice(1) === current) {
+            link.classList.add("active");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
